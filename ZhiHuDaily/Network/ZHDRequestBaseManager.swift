@@ -9,7 +9,7 @@
 import UIKit
 
 let currentQueue = DispatchQueue.global()
-
+let mainQueue = DispatchQueue.main
 
 class ZHDRequestManagerBase{
     
@@ -19,7 +19,7 @@ class ZHDRequestManagerBase{
                         _ success : (_ data : AnyObject?) -> Void ,
                         _ failure : (_ error : NSError?) -> Void){
         
-        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         var sumpa = URLString +  "?"
         for key in paras.keys{
@@ -28,11 +28,24 @@ class ZHDRequestManagerBase{
             sumpa += pa
         }
         let url : URL = URL.init(string: sumpa)!
-        let session =  URLSession.init()
-        var urlRequest = URLRequest.init(url: url)
+        let defaultConfiguration = URLSessionConfiguration.default
+        let sessionWithoutADelegate = URLSession(configuration: defaultConfiguration)
 
         currentQueue.async {
-        
+            (sessionWithoutADelegate.dataTask(with: url, completionHandler: { (data, response, error) in
+                
+                mainQueue.async {
+                    if let response = response{
+                        
+                        print(NSString(data: data!, encoding:String.Encoding.utf8.rawValue))
+                        
+                        print(data,response)
+                    }else if let error = error{
+                        print(error)
+                    }
+
+                }
+            })).resume()
 
             
         }

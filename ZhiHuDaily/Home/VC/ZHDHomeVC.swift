@@ -28,6 +28,11 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         super.viewDidLoad()
         
         self.setupTableview()
+        ZHDRequestManagerBase.request("http://news-at.zhihu.com/api/4/news/latest", ["123" : "123"], { (data) in
+            
+            }) { (error) in
+                
+        }
    }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -108,7 +113,6 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
         
         let offset = scrollView.contentOffset.y + 64.0
         let scale = offset / 100.0
