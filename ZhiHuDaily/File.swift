@@ -12,3 +12,5 @@ import UIKit
 let ZHDScreenRect : CGRect = UIScreen.main.bounds
 let ZHDScreenWidth : CGFloat = UIScreen.main.bounds.width
 let ZHDScreenHeight : CGFloat = UIScreen.main.bounds.height
+
+let kBaseURLString : String = "http://news-at.zhihu.com/api/4"

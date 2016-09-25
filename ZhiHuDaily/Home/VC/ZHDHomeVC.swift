@@ -14,6 +14,8 @@ let dailyString : String = "今日热文"
 let kBannerCellReuserID : String = "kBannerCellReuseID"
 let kNewsCellReuserID : String = "kNewsCellReuserID"
 
+
+let kBannerCellHeight = 100.0
 class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
@@ -60,6 +62,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     func setupNavgationBar(){
         let navi = (self.navigationController?.navigationBar.subviews[0])! as UIView
         navi.alpha = 0
+        self.navigationController?.navigationBar.barTintColor = .red
     }
 
     func setupTitleView(){
@@ -77,7 +80,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     }
     
-    
+    //MARK:- tableview Delegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -102,5 +105,20 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
         return 50
     }
+    
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
+        
+        let offset = scrollView.contentOffset.y + 64.0
+        let scale = offset / 100.0
+        
+        let navi = (self.navigationController?.navigationBar.subviews[0])! as UIView
+        navi.alpha = scale
+    }
+    
+    
+    
+    //MARK:-
 
 }
