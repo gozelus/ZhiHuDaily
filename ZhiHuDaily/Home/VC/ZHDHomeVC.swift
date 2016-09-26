@@ -14,6 +14,7 @@ fileprivate let kBannerCellReuserID = "kBannerCellReuseID"
 fileprivate let kNewsCellReuserID = "kNewsCellReuserID"
 fileprivate let kBannerCellHeight = 100.0
 
+// https://github.com/OpenMarshall/ZhiHuDaily/tree/xky_develop
 
 class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
