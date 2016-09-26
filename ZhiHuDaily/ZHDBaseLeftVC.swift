@@ -10,18 +10,17 @@ import UIKit
 
 class ZHDBaseLeftVC: UIViewController {
     
-    var tableview : UITableView = UITableView()
+    var tableview = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .blue
         self.setupSubviews()
-        
-
     }
+    
     func setupSubviews(){
-        self.tableview.frame = CGRect.init(x: ZHDScreenWidth * 0.5, y: 0, width: ZHDScreenWidth * 0.5, height: ZHDScreenHeight)
+        self.tableview.frame = CGRect(x: ZHDScreenWidth * 0.5, y: 0, width: ZHDScreenWidth * 0.5, height: ZHDScreenHeight)
         self.view.addSubview(self.tableview)
         self.tableview.backgroundColor = UIColor.black
     }

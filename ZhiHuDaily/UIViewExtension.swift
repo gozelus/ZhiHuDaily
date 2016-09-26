@@ -12,22 +12,22 @@ import UIKit
 extension UIView {
 
     func zl_setX( _ x : CGFloat){
-        self.frame = CGRect.init(x: x, y: self.frame.origin.y, width: self.frame.size.width ,height: self.frame.size.height)
+        self.frame = CGRect(x: x, y: self.frame.origin.y, width: self.frame.size.width ,height: self.frame.size.height)
     }
     func zl_setY(_ y : CGFloat){
-        self.frame = CGRect.init(x: self.frame.origin.x, y:y , width: self.frame.size.width ,height: self.frame.size.height)
+        self.frame = CGRect(x: self.frame.origin.x, y:y , width: self.frame.size.width ,height: self.frame.size.height)
     }
     func zl_setWidth(_ width : CGFloat){
-        self.frame = CGRect.init(x: self.frame.origin.x, y:self.frame.origin.y , width: width ,height: self.frame.size.height)
+        self.frame = CGRect(x: self.frame.origin.x, y:self.frame.origin.y , width: width ,height: self.frame.size.height)
     }
     func zl_setHeight(_ height : CGFloat){
-        self.frame = CGRect.init(x: self.frame.origin.x, y:self.frame.origin.y , width: self.frame.size.width ,height:height)
+        self.frame = CGRect(x: self.frame.origin.x, y:self.frame.origin.y , width: self.frame.size.width ,height:height)
     }
     func zl_setSize(_ size : CGSize){
-        self.frame = CGRect.init(origin: self.frame.origin, size: size)
+        self.frame = CGRect(origin: self.frame.origin, size: size)
     }
     func zl_setOrigin(_ point : CGPoint){
-        self.frame = CGRect.init(origin: point, size: self.frame.size)
+        self.frame = CGRect(origin: point, size: self.frame.size)
     }
     
     

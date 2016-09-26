@@ -14,6 +14,7 @@ fileprivate let kBannerCellReuserID = "kBannerCellReuseID"
 fileprivate let kNewsCellReuserID = "kNewsCellReuserID"
 fileprivate let kBannerCellHeight = 100.0
 
+// https://github.com/OpenMarshall/ZhiHuDaily/tree/xky_develop
 
 class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -37,13 +38,12 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupNavigation()
-        
     }
     
     
     // MARK: - Private
     private func setupTableview(){
-        self.tableview.frame = CGRect.init(origin: CGPoint.zero, size: ZHDScreenRect.size)
+        self.tableview.frame = CGRect(origin: CGPoint.zero, size: ZHDScreenRect.size)
         self.tableview.delegate = self
         self.tableview.dataSource = self
         self.tableview.register(ZHDHomeBannerCell.classForCoder(), forCellReuseIdentifier: kBannerCellReuserID)
@@ -60,7 +60,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     private func setupNavgationBar(){
-        if let navi  = self.navigationController?.navigationBar.subviews.first {
+        if let navi = self.navigationController?.navigationBar.subviews.first {
             navi.alpha = 0
         }
         self.navigationController?.navigationBar.barTintColor = .red
@@ -69,12 +69,14 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private func setupTitleView(){
         
         self.navigationItem.titleView = self.naviTitleView
-        let label  = UILabel.init()
+        let label = UILabel()
         label.text = dailyString
         label.textColor = .white
         label.sizeToFit()
         
-        self.naviTitleView.center = (self.navigationController?.navigationBar.center)!
+        if let center = self.navigationController?.navigationBar.center {
+            self.naviTitleView.center = center
+        }
         self.naviTitleView.zl_setSize(label.zl_size())
         self.naviTitleView.addSubview(label)
         
@@ -89,23 +91,30 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            
-            return self.tableview.dequeueReusableCell(withIdentifier: kBannerCellReuserID)!
+            if let cell = self.tableview.dequeueReusableCell(withIdentifier: kBannerCellReuserID) {
+                return cell
+            }else {
+                return UITableViewCell()
+            }
         }
-        return self.tableview.dequeueReusableCell(withIdentifier: kNewsCellReuserID)!
+        
+        if let cell = self.tableview.dequeueReusableCell(withIdentifier: kNewsCellReuserID) {
+            return cell
+        }else {
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
-        }else{
+        }else {
             return 20
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            
             return 100
         }
         return 50
@@ -118,7 +127,8 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let offset = scrollView.contentOffset.y + 64.0
         let scale = offset / 100.0
         
-        let navi = (self.navigationController?.navigationBar.subviews[0])! as UIView
-        navi.alpha = scale
+        if let navi = self.navigationController?.navigationBar.subviews.first {
+            navi.alpha = scale
+        }
     }
 }
