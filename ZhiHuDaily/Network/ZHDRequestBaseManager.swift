@@ -27,7 +27,7 @@ class ZHDRequestManagerBase{
             let pa = key + "&" + valueS
             sumpa += pa
         }
-        let url : URL = URL.init(string: sumpa)!
+        let url : URL = URL(string: sumpa)!
         let defaultConfiguration = URLSessionConfiguration.default
         let sessionWithoutADelegate = URLSession(configuration: defaultConfiguration)
 

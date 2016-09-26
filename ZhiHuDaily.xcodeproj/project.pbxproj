@@ -22,6 +22,7 @@
 		1B8D87801D97EF930090DC24 /* ZHDHomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */; };
 		1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */; };
 		1B8D87851D97FC210090DC24 /* ZHDRequestBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87841D97FC210090DC24 /* ZHDRequestBaseManager.swift */; };
+		5FBE27C21D98F00D00280F78 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeBannerCell.swift; sourceTree = "<group>"; };
 		1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeNewsCell.swift; sourceTree = "<group>"; };
 		1B8D87841D97FC210090DC24 /* ZHDRequestBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDRequestBaseManager.swift; sourceTree = "<group>"; };
+		5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				1B8D876C1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift */,
 				1B8D87701D97E1BE0090DC24 /* UIViewExtension.swift */,
 				1B8D876A1D97D4350090DC24 /* File.swift */,
+				5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */,
 				1B8D87831D97FC020090DC24 /* Network */,
 				1B8D87771D97EF6C0090DC24 /* Home */,
 				1B12AAED1D97D24F00561A06 /* Assets.xcassets */,
@@ -326,6 +329,7 @@
 				1B12AAE91D97D24F00561A06 /* ViewController.swift in Sources */,
 				1B8D876B1D97D4350090DC24 /* File.swift in Sources */,
 				1B8D87851D97FC210090DC24 /* ZHDRequestBaseManager.swift in Sources */,
+				5FBE27C21D98F00D00280F78 /* SwiftyJSON.swift in Sources */,
 				1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */,
 				1B8D877E1D97EF6C0090DC24 /* ZHDHomeVC.swift in Sources */,
 				1B12AAE71D97D24F00561A06 /* AppDelegate.swift in Sources */,

@@ -18,16 +18,13 @@ class ZHDHomeBannerCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.backgroundColor = .blue
-        
-        
         self.initSubviews()
     }
     
     func initSubviews(){
-        let view =  UIView()
+        let view = UIView()
         view.zl_setY(-64)
-        view.zl_setSize(CGSize.init(width: ZHDScreenWidth, height: 164))
-
+        view.zl_setSize(CGSize(width: ZHDScreenWidth, height: 164))
         view.backgroundColor = .red
         self.addSubview(view)
     }
