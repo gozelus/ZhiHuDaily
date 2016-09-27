@@ -24,10 +24,10 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var naviTitleView = UIView()
     
     /// 顶部banner数据模型
-    private var topCellViewModels : [ZHDHomeTopBannerViewModel] = Array()
+    private var topCellViewModels : [ZHDHomeTopBannerModel] = Array()
     
     /// 新闻cell数据模型
-    private var newCellViewModels : [ZHDHomeNewsCellViewModel] = Array()
+    private var newCellViewModels : [ZHDHomeNewsCellModel] = Array()
     
     
     // MARK: - Life Cycle

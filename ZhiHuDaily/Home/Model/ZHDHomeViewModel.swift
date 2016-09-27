@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ZHDHomeNewsCellViewModel{
+class ZHDHomeNewsCellModel{
     var id : String?
     var imageURL : String?
     var title : String?
@@ -25,7 +25,7 @@ class ZHDHomeNewsCellViewModel{
 }
 
 //首页顶部banner数据模型
-class ZHDHomeTopBannerViewModel{
+class ZHDHomeTopBannerModel{
     var id : String?
     var imgeUrl : String?
     var title : String?
@@ -47,8 +47,8 @@ class ZHDHomeTopBannerViewModel{
 class ZHDHomeModel{
 
     var date : String?
-    var top_stroies : [ZHDHomeTopBannerViewModel] = Array()
-    var stroies : [ZHDHomeNewsCellViewModel] = Array()
+    var top_stroies : [ZHDHomeTopBannerModel] = Array()
+    var stroies : [ZHDHomeNewsCellModel] = Array()
     init(_ json : JSON){
 
         self.date = json["date"].string
@@ -59,12 +59,12 @@ class ZHDHomeModel{
         
         for storyModelJson in stories! {
             
-            self.stroies.append(ZHDHomeNewsCellViewModel(storyModelJson))
+            self.stroies.append(ZHDHomeNewsCellModel(storyModelJson))
         }
         
         for topStoryModelJson in topStories! {
           
-          self.top_stroies.append(ZHDHomeTopBannerViewModel(topStoryModelJson))
+          self.top_stroies.append(ZHDHomeTopBannerModel(topStoryModelJson))
         }
     }
     

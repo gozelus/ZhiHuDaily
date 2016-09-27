@@ -28,6 +28,7 @@
 		5FBE27C51D99042D00280F78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; };
 		5FBE27C81D99059200280F78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; };
 		5FBE27C91D99059200280F78 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CDF74C866591A8E1039BA93 /* Pods_ZhiHuDaily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +86,11 @@
 		1B8D877B1D97EF6C0090DC24 /* ZHDHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeVC.swift; sourceTree = "<group>"; };
 		1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeBannerCell.swift; sourceTree = "<group>"; };
 		1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeNewsCell.swift; sourceTree = "<group>"; };
+		26D0A54DDB2D5381AAE04E35 /* Pods-ZhiHuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.debug.xcconfig"; sourceTree = "<group>"; };
 		5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		5FBE27C41D99042D00280F78 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		69A2A72E6F622E112C4D4F24 /* Pods-ZhiHuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.release.xcconfig"; sourceTree = "<group>"; };
+		BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHuDaily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			files = (
 				5FBE27C51D99042D00280F78 /* Alamofire.framework in Frameworks */,
 				5FBE27C81D99059200280F78 /* Alamofire.framework in Frameworks */,
+				7CDF74C866591A8E1039BA93 /* Pods_ZhiHuDaily.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +128,8 @@
 				1B12AAFA1D97D24F00561A06 /* ZhiHuDailyTests */,
 				1B12AB051D97D24F00561A06 /* ZhiHuDailyUITests */,
 				1B12AAE41D97D24F00561A06 /* Products */,
+				DECB98CC3020B6A4AAF03F08 /* Pods */,
+				72203B682565224413C36C0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +242,23 @@
 			name = Lib;
 			sourceTree = "<group>";
 		};
+		72203B682565224413C36C0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DECB98CC3020B6A4AAF03F08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26D0A54DDB2D5381AAE04E35 /* Pods-ZhiHuDaily.debug.xcconfig */,
+				69A2A72E6F622E112C4D4F24 /* Pods-ZhiHuDaily.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,10 +266,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B12AB0B1D97D24F00561A06 /* Build configuration list for PBXNativeTarget "ZhiHuDaily" */;
 			buildPhases = (
+				4BDB45B7CD89B03F3510C2BD /* [CP] Check Pods Manifest.lock */,
 				1B12AADF1D97D24F00561A06 /* Sources */,
 				1B12AAE01D97D24F00561A06 /* Frameworks */,
 				1B12AAE11D97D24F00561A06 /* Resources */,
 				5FBE27CA1D99059200280F78 /* Embed Frameworks */,
+				33BCD817F27DBFDD3A0AB1D5 /* [CP] Embed Pods Frameworks */,
+				FB7334441B0473620343B6D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,7 +331,7 @@
 				TargetAttributes = {
 					1B12AAE21D97D24F00561A06 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = U9EXFUUUT3;
+						DevelopmentTeam = X2GKQ9LZGU;
 						ProvisioningStyle = Automatic;
 					};
 					1B12AAF61D97D24F00561A06 = {
@@ -364,6 +391,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33BCD817F27DBFDD3A0AB1D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BDB45B7CD89B03F3510C2BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB7334441B0473620343B6D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1B12AADF1D97D24F00561A06 /* Sources */ = {
@@ -525,15 +600,16 @@
 		};
 		1B12AB0C1D97D24F00561A06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26D0A54DDB2D5381AAE04E35 /* Pods-ZhiHuDaily.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U9EXFUUUT3;
+				DEVELOPMENT_TEAM = X2GKQ9LZGU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZhiHuDaily",
 				);
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ZhiHuDaily";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -543,15 +619,16 @@
 		};
 		1B12AB0D1D97D24F00561A06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69A2A72E6F622E112C4D4F24 /* Pods-ZhiHuDaily.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U9EXFUUUT3;
+				DEVELOPMENT_TEAM = X2GKQ9LZGU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZhiHuDaily",
 				);
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ZhiHuDaily";
 				PRODUCT_NAME = "$(TARGET_NAME)";
