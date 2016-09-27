@@ -23,28 +23,27 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var tableview = UITableView()
     private var naviTitleView = UIView()
     
+    /// 顶部banner数据模型
+    private var topCellViewModels : [ZHDHomeTopBannerViewModel] = Array()
+    
+    /// 新闻cell数据模型
+    private var newCellViewModels : [ZHDHomeNewsCellViewModel] = Array()
+    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupTableview()
-        ZHDRequestManagerBase.request("http://news-at.zhihu.com/api/4/news/latest", ["123" : "123"], { (data) in
-            
-        }) { (error) in
-            
-        }
         
-        // Alamofire Test
-        Alamofire.request("https://httpbin.org/get").responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+        HTTPRequestHome.request(success: { (json) in
+            let  homeModel = ZHDHomeModel(json)
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
+            self.topCellViewModels = homeModel.top_stroies
+            self.newCellViewModels = homeModel.stroies
+            
+            }) { (error) in
+                print(error)
         }
     }
     
@@ -55,6 +54,8 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     // MARK: - Private
+    
+    // MARK: UI
     private func setupTableview(){
         self.tableview.frame = CGRect(origin: CGPoint.zero, size: ZHDScreenRect.size)
         self.tableview.delegate = self
@@ -76,7 +77,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let navi = self.navigationController?.navigationBar.subviews.first {
             navi.alpha = 0
         }
-        self.navigationController?.navigationBar.barTintColor = .red
+        self.navigationController?.navigationBar.barTintColor = .gray
     }
     
     private func setupTitleView(){
@@ -92,8 +93,6 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         self.naviTitleView.zl_setSize(label.zl_size())
         self.naviTitleView.addSubview(label)
-        
-        
     }
     
     

@@ -13,6 +13,9 @@
 		1B12AAF11D97D24F00561A06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B12AAEF1D97D24F00561A06 /* LaunchScreen.storyboard */; };
 		1B12AAFC1D97D24F00561A06 /* ZhiHuDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12AAFB1D97D24F00561A06 /* ZhiHuDailyTests.swift */; };
 		1B12AB071D97D24F00561A06 /* ZhiHuDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12AB061D97D24F00561A06 /* ZhiHuDailyUITests.swift */; };
+		1B4380F11D9908EE0034EB19 /* HTTPRequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4380F01D9908EE0034EB19 /* HTTPRequestBase.swift */; };
+		1B4380F31D991B720034EB19 /* ZHDHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4380F21D991B720034EB19 /* ZHDHomeViewModel.swift */; };
+		1B4380F61D991C8D0034EB19 /* HTTPRequestHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4380F51D991C8D0034EB19 /* HTTPRequestHome.swift */; };
 		1B8D87691D97D36A0090DC24 /* ZHDBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87681D97D36A0090DC24 /* ZHDBaseViewController.swift */; };
 		1B8D876B1D97D4350090DC24 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D876A1D97D4350090DC24 /* File.swift */; };
 		1B8D876D1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D876C1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift */; };
@@ -21,7 +24,6 @@
 		1B8D877E1D97EF6C0090DC24 /* ZHDHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D877B1D97EF6C0090DC24 /* ZHDHomeVC.swift */; };
 		1B8D87801D97EF930090DC24 /* ZHDHomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */; };
 		1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */; };
-		1B8D87851D97FC210090DC24 /* ZHDRequestBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87841D97FC210090DC24 /* ZHDRequestBaseManager.swift */; };
 		5FBE27C21D98F00D00280F78 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */; };
 		5FBE27C51D99042D00280F78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; };
 		5FBE27C81D99059200280F78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; };
@@ -72,6 +74,9 @@
 		1B12AB021D97D24F00561A06 /* ZhiHuDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhiHuDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B12AB061D97D24F00561A06 /* ZhiHuDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiHuDailyUITests.swift; sourceTree = "<group>"; };
 		1B12AB081D97D24F00561A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B4380F01D9908EE0034EB19 /* HTTPRequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestBase.swift; sourceTree = "<group>"; };
+		1B4380F21D991B720034EB19 /* ZHDHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeViewModel.swift; sourceTree = "<group>"; };
+		1B4380F51D991C8D0034EB19 /* HTTPRequestHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestHome.swift; sourceTree = "<group>"; };
 		1B8D87681D97D36A0090DC24 /* ZHDBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDBaseViewController.swift; sourceTree = "<group>"; };
 		1B8D876A1D97D4350090DC24 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		1B8D876C1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDBaseLeftVC.swift; sourceTree = "<group>"; };
@@ -80,7 +85,6 @@
 		1B8D877B1D97EF6C0090DC24 /* ZHDHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeVC.swift; sourceTree = "<group>"; };
 		1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeBannerCell.swift; sourceTree = "<group>"; };
 		1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeNewsCell.swift; sourceTree = "<group>"; };
-		1B8D87841D97FC210090DC24 /* ZHDRequestBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDRequestBaseManager.swift; sourceTree = "<group>"; };
 		5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		5FBE27C41D99042D00280F78 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,9 +173,18 @@
 			path = ZhiHuDailyUITests;
 			sourceTree = "<group>";
 		};
+		1B4380F41D991C620034EB19 /* Requeset */ = {
+			isa = PBXGroup;
+			children = (
+				1B4380F51D991C8D0034EB19 /* HTTPRequestHome.swift */,
+			);
+			path = Requeset;
+			sourceTree = "<group>";
+		};
 		1B8D87771D97EF6C0090DC24 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1B4380F41D991C620034EB19 /* Requeset */,
 				1B8D87781D97EF6C0090DC24 /* Model */,
 				1B8D87791D97EF6C0090DC24 /* VC */,
 				1B8D877C1D97EF6C0090DC24 /* View */,
@@ -182,6 +195,7 @@
 		1B8D87781D97EF6C0090DC24 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B4380F21D991B720034EB19 /* ZHDHomeViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,7 +221,7 @@
 		1B8D87831D97FC020090DC24 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				1B8D87841D97FC210090DC24 /* ZHDRequestBaseManager.swift */,
+				1B4380F01D9908EE0034EB19 /* HTTPRequestBase.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -357,14 +371,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B12AAE91D97D24F00561A06 /* ViewController.swift in Sources */,
+				1B4380F31D991B720034EB19 /* ZHDHomeViewModel.swift in Sources */,
 				1B8D876B1D97D4350090DC24 /* File.swift in Sources */,
-				1B8D87851D97FC210090DC24 /* ZHDRequestBaseManager.swift in Sources */,
 				5FBE27C21D98F00D00280F78 /* SwiftyJSON.swift in Sources */,
 				1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */,
 				1B8D877E1D97EF6C0090DC24 /* ZHDHomeVC.swift in Sources */,
 				1B12AAE71D97D24F00561A06 /* AppDelegate.swift in Sources */,
 				1B8D87711D97E1BE0090DC24 /* UIViewExtension.swift in Sources */,
 				1B8D87691D97D36A0090DC24 /* ZHDBaseViewController.swift in Sources */,
+				1B4380F11D9908EE0034EB19 /* HTTPRequestBase.swift in Sources */,
+				1B4380F61D991C8D0034EB19 /* HTTPRequestHome.swift in Sources */,
 				1B8D87801D97EF930090DC24 /* ZHDHomeBannerCell.swift in Sources */,
 				1B8D877D1D97EF6C0090DC24 /* ZHDHomeNaviVC.swift in Sources */,
 				1B8D876D1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift in Sources */,
