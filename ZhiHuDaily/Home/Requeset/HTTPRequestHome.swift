@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 fileprivate let homeURLString = "/news/latest"
 
 class HTTPRequestHome: HTTPRequestBase {

@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ZHDHomeNewsCellModel{
     var id : String?
@@ -18,25 +19,25 @@ class ZHDHomeNewsCellModel{
     init(_ json : JSON) {
         
         self.id = json["id"].string
-        self.title = json["image"].string
+        self.title = json["title"].string
         self.type = json["type"].string
-        self.imageURL = json["image"].string
+        self.imageURL =  json["images"][0].string
     }
 }
 
 //首页顶部banner数据模型
 class ZHDHomeTopBannerModel{
     var id : String?
-    var imgeUrl : String?
+    var imgeURL : String?
     var title : String?
     var type : String?
     
     init(_ json : JSON) {
         
         self.id = json["id"].string
-        self.title = json["image"].array?[0].string
+        self.title = json["images"].string
         self.type = json["type"].string
-        self.imgeUrl = json["image"].string
+        self.imgeURL = json["image"].string
         
     }
     

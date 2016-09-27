@@ -10,6 +10,7 @@
 
 import UIKit
 import Alamofire
+ import SwiftyJSON
 
  fileprivate let baseURLString = "http://news-at.zhihu.com/api/4"
  
@@ -23,7 +24,6 @@ class HTTPRequestBase{
         
         
         let fullURL : URL = URL.init(string: baseURLString + urlStr)!
- 
         Alamofire.request(fullURL).responseJSON { (response) in
             
             switch response.result {

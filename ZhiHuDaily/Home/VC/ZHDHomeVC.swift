@@ -42,6 +42,8 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.topCellViewModels = homeModel.top_stroies
             self.newCellViewModels = homeModel.stroies
             
+            self.tableview.reloadData()
+            
             }) { (error) in
                 print(error)
         }
@@ -58,6 +60,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: UI
     private func setupTableview(){
         self.tableview.frame = CGRect(origin: CGPoint.zero, size: ZHDScreenRect.size)
+        self.tableview.separatorStyle = .none
         self.tableview.delegate = self
         self.tableview.dataSource = self
         self.tableview.register(ZHDHomeBannerCell.classForCoder(), forCellReuseIdentifier: kBannerCellReuserID)
@@ -77,7 +80,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let navi = self.navigationController?.navigationBar.subviews.first {
             navi.alpha = 0
         }
-        self.navigationController?.navigationBar.barTintColor = .gray
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     }
     
     private func setupTitleView(){
@@ -110,7 +113,11 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        if let cell = self.tableview.dequeueReusableCell(withIdentifier: kNewsCellReuserID) {
+        if let cell : ZHDHomeNewsCell = self.tableview.dequeueReusableCell(withIdentifier: kNewsCellReuserID) as! ZHDHomeNewsCell?
+        {
+            if !self.newCellViewModels.isEmpty {
+                cell.updateWithModel(model: self.newCellViewModels[indexPath.row])
+            }
             return cell
         }else {
             return UITableViewCell()
@@ -121,7 +128,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         }else {
-            return 20
+            return self.newCellViewModels.count
         }
     }
     
@@ -129,7 +136,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             return 100
         }
-        return 50
+        return 80
     }
     
     

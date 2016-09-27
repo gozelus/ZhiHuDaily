@@ -24,7 +24,11 @@ class ZHDHomeNewsCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = .yellow
+        
+        
+        //SETUP UI
+        setupSubviews()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,18 +43,18 @@ class ZHDHomeNewsCell: UITableViewCell {
         self.titleLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         self.addSubview(self.titleLabel)
         self.addSubview(self.imgView)
+        self.titleLabel.backgroundColor = .blue
         
         self.titleLabel.snp.remakeConstraints { (make) in
-            make.top.equalTo(superview!).offset(kTitleLabelOffset)
-            make.left.equalTo(superview!).offset(kTitleLabelOffset)
-            make.right.equalTo(self.imgView).offset(kTitleLabelOffset)
+            make.top.left.bottom.equalTo(self).offset(10)
+            make.right.equalTo(self).offset(0)
             
         }
         
-        self.imgView.snp.remakeConstraints { (make) in
-            make.top.right.bottom.equalTo(superview!).offset(kTitleLabelOffset)
-            make.left.equalTo(self.titleLabel).offset(kTitleLabelOffset)
-        }
+//        self.imgView.snp.remakeConstraints { (make) in
+//            make.top.right.bottom.equalTo(self).offset(kTitleLabelOffset)
+//            make.left.equalTo(self.titleLabel).offset(kTitleLabelOffset)
+//        }
         
     }
     
@@ -75,7 +79,6 @@ class ZHDHomeNewsCell: UITableViewCell {
         if let title = model.title as String!{
             
             self.titleLabel.text = title
-            self.titleLabel.sizeToFit()
         }
     }
 

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3AC3CBED8531BDBFC2B3461ECE6FC9C5'
-               BlueprintName = 'SDWebImage'
+               BlueprintIdentifier = '79C040AFDDCE1BCBF6D8B5EB0B85887F'
+               BlueprintName = 'Alamofire'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SDWebImage.framework'>
+               BuildableName = 'Alamofire.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
