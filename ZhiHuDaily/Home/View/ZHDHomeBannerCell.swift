@@ -13,6 +13,12 @@ import UIKit
 import SnapKit
 
 class ZHDHomeBannerCell: UITableViewCell {
+    
+    
+    private var circleView : ZHDCircle = ZHDCircle()
+    private var circleViewTop: Constraint?
+    
+    
 
     private var DepthFieldView : UIImageView?
     
@@ -33,40 +39,37 @@ class ZHDHomeBannerCell: UITableViewCell {
     
     func initSubviews(){
         
-        
-
-        
+        self.addSubview(self.circleView)
+        self.circleView.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+            self.circleViewTop = make.top.equalTo(self.snp.top).offset(-64).constraint
+            make.bottom.equalTo(self.snp.bottom)
+        }
     }
    
     public func updateWithBannerModel(_ models : [ZHDHomeTopBannerModel]!){
         
-        self.DepthFieldView = UIImageView()
-        self.DepthFieldView?.contentMode = .scaleAspectFill
-        self.DepthFieldView?.clipsToBounds = true
-        self.addSubview(self.DepthFieldView!)
-        self.DepthFieldView?.snp.makeConstraints({ (make) in
-            
-            make.left.equalTo(self.snp.left)
-            make.right.equalTo(self.snp.right)
-            
-            self.depthFieldBottomConstranit = make.bottom.equalTo(self.snp.bottom).offset(0).constraint
-            self.depthFieldlTopConstraint = make.top.equalTo(self.snp.top).offset(-64).constraint
-            
-        })
-        
         self.BannerModels = models
         
-        let model = models[0] as ZHDHomeTopBannerModel
-        let url = URL(string : model.imgeURL!)
+        var urls : [String] = [String]()
+        for  model in self.BannerModels!{
+            
+            if let urlStrng : String = model.imgeURL!{
+                urls.append(urlStrng)
+            }
+        }
         
-        self.DepthFieldView?.sd_setImage(with: url)
-        
+        self.circleView.update(urls)
     }
     
     
     public func updateDepthFieldView(_ scale : CGFloat){
-    
-        self.depthFieldlTopConstraint?.update(offset: -64 - 100 * scale )
+        if scale < 0 {
+            return
+        }
+        self.circleViewTop?.update(offset: -64 - 100 * scale )
     }
     
     

@@ -24,6 +24,7 @@
 		1B8D877E1D97EF6C0090DC24 /* ZHDHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D877B1D97EF6C0090DC24 /* ZHDHomeVC.swift */; };
 		1B8D87801D97EF930090DC24 /* ZHDHomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */; };
 		1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */; };
+		1BECA02C1D9BBA1600B200D3 /* ZHDCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECA02B1D9BBA1600B200D3 /* ZHDCircle.swift */; };
 		5FBE27C51D99042D00280F78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; };
 		7CDF74C866591A8E1039BA93 /* Pods_ZhiHuDaily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		1B8D877B1D97EF6C0090DC24 /* ZHDHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeVC.swift; sourceTree = "<group>"; };
 		1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeBannerCell.swift; sourceTree = "<group>"; };
 		1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeNewsCell.swift; sourceTree = "<group>"; };
+		1BECA02B1D9BBA1600B200D3 /* ZHDCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDCircle.swift; sourceTree = "<group>"; };
 		26D0A54DDB2D5381AAE04E35 /* Pods-ZhiHuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.debug.xcconfig"; sourceTree = "<group>"; };
 		5FBE27C41D99042D00280F78 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = /Users/zhengli/Desktop/ZhiHuDaily/ZhiHuDaily/Alamofire.framework; sourceTree = "<absolute>"; };
 		69A2A72E6F622E112C4D4F24 /* Pods-ZhiHuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */,
 				1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */,
+				1BECA02B1D9BBA1600B200D3 /* ZHDCircle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			files = (
 				1B12AAE91D97D24F00561A06 /* ViewController.swift in Sources */,
 				1B4380F31D991B720034EB19 /* ZHDHomeViewModel.swift in Sources */,
+				1BECA02C1D9BBA1600B200D3 /* ZHDCircle.swift in Sources */,
 				1B8D876B1D97D4350090DC24 /* File.swift in Sources */,
 				1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */,
 				1B8D877E1D97EF6C0090DC24 /* ZHDHomeVC.swift in Sources */,
