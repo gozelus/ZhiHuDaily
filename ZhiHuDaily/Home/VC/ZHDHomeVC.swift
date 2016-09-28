@@ -22,13 +22,13 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var tableview = UITableView()
     private var naviTitleView = UIView()
+    private var topBannerCell = ZHDHomeBannerCell()
     
     /// 顶部banner数据模型
     private var topCellViewModels : [ZHDHomeTopBannerModel] = Array()
     
     /// 新闻cell数据模型
     private var newCellViewModels : [ZHDHomeNewsCellModel] = Array()
-    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -41,6 +41,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             self.topCellViewModels = homeModel.top_stroies
             self.newCellViewModels = homeModel.stroies
+        
             
             self.tableview.reloadData()
             
@@ -106,7 +107,13 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if let cell = self.tableview.dequeueReusableCell(withIdentifier: kBannerCellReuserID) {
+            if let cell : ZHDHomeBannerCell = self.tableview.dequeueReusableCell(withIdentifier: kBannerCellReuserID) as? ZHDHomeBannerCell{
+                
+                self.topBannerCell = cell
+                
+                if !self.topCellViewModels.isEmpty {
+                    cell.updateWithBannerModel(self.topCellViewModels)
+                }
                 return cell
             }else {
                 return UITableViewCell()
@@ -144,7 +151,9 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y + 64.0
-        let scale = offset / 100.0
+        let scale = offset / 100.0   //1--->0
+    
+        self.topBannerCell.updateDepthFieldView(1-scale)
         
         if let navi = self.navigationController?.navigationBar.subviews.first {
             navi.alpha = scale
