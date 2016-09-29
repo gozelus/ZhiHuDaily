@@ -81,18 +81,19 @@ class ZHDHomeBannerCell: UITableViewCell, UIScrollViewDelegate {
         let theFirstOffset = CGFloat(0)
         
         let theSecondImgPoint = CGPoint(x: ZHDScreenWidth, y: 0)
-        let thePreLastImgPoint = CGPoint(x: CGFloat((self.BannerModels?.count)! + 1) * ZHDScreenWidth, y: 0)
+        let thePreLastImgPoint = CGPoint(x: CGFloat(5) * ZHDScreenWidth, y: 0)
         
         if offset >= theLastOffset {
-            scrollView.setContentOffset(theSecondImgPoint, animated: false)
+            scrollView.setContentOffset(theSecondImgPoint, animated: false)//最后一张 跳转到第二张
         }
         
         if offset <= theFirstOffset{
-            scrollView.setContentOffset(thePreLastImgPoint, animated: false)
+            scrollView.setContentOffset(thePreLastImgPoint, animated: false)//第一张 跳转到倒数第二张
         }
         
-        let currentPageIndex = offset / ZHDScreenWidth;
+        let currentPageIndex = scrollView.contentOffset.x / ZHDScreenWidth;
         print(currentPageIndex)
+
         self.pageController.currentPage = Int(currentPageIndex)
     }
     

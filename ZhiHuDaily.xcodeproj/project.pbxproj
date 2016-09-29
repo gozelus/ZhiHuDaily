@@ -26,6 +26,7 @@
 		1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */; };
 		1BECA02C1D9BBA1600B200D3 /* ZHDCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECA02B1D9BBA1600B200D3 /* ZHDCircle.swift */; };
 		1BECA02E1D9C041000B200D3 /* ZHDCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECA02D1D9C041000B200D3 /* ZHDCircleCell.swift */; };
+		1BECA02F1D9CDC2800B200D3 /* Pods_ZhiHuDaily.framework in Sources */ = {isa = PBXBuildFile; fileRef = BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */; };
 		5FBE27C51D99042D00280F78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; };
 		7CDF74C866591A8E1039BA93 /* Pods_ZhiHuDaily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */; };
 /* End PBXBuildFile section */
@@ -443,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BECA02F1D9CDC2800B200D3 /* Pods_ZhiHuDaily.framework in Sources */,
 				1B12AAE91D97D24F00561A06 /* ViewController.swift in Sources */,
 				1B4380F31D991B720034EB19 /* ZHDHomeViewModel.swift in Sources */,
 				1BECA02C1D9BBA1600B200D3 /* ZHDCircle.swift in Sources */,
@@ -608,7 +610,7 @@
 					"$(PROJECT_DIR)/ZhiHuDaily",
 				);
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ZhiHuDaily";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -627,7 +629,7 @@
 					"$(PROJECT_DIR)/ZhiHuDaily",
 				);
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ZhiHuDaily";
 				PRODUCT_NAME = "$(TARGET_NAME)";
