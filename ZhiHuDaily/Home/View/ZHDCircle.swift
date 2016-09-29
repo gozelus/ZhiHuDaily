@@ -13,17 +13,19 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-fileprivate var lastImgView : UIImageView?
+fileprivate var lastImgView : ZHDCircleCell?
 
 fileprivate let kImgViewWidth = ZHDScreenWidth
 
 
+
 class ZHDCircle: UIScrollView {
+    
     
     private var imgURLs : [String] = [String]()
     private var imgViews  : [UIImageView] = [UIImageView]()
+    private var titles : [String] = [String]()
     private var imgViewTopContraints : [Constraint] = [Constraint]()
-    
     
     //MARK: public
     override init(frame: CGRect) {
@@ -36,23 +38,41 @@ class ZHDCircle: UIScrollView {
     /// 根据数组跟新ui
     ///
     /// - parameter array: <#array description#>
-    public func update(_ array : [String]!){
+    public func update(models : [ZHDHomeTopBannerModel]!){
         
-        self.imgURLs = array
+        var urls : [String] = [String]()
+        var titles : [String] = [String]()
+    
         
-        //处理urls数组
-        let firstURLStr = self.imgURLs.first
-        let lastURLStr = self.imgURLs.last
+        for model in models{
+            urls.append(model.imgeURL!)
+            titles.append(model.title!)
+        }
         
-        self.imgURLs.insert(firstURLStr!, at: 0)
-        self.imgURLs.append(lastURLStr!)
-
+        self.imgURLs = changeArray(urls)
+        self.titles = changeArray(titles)
+        
         self.initUI()
     }
     
     
     
+    
     //MARK: pravite
+    private func changeArray(_ array : [String]) -> [String]{
+        
+        var changedArray : [String] = array
+        
+        //处理urls数组
+        let firstURLStr : String = array.last!
+        let lastURLStr : String = array.first!
+        
+        changedArray.insert(firstURLStr, at: 0)
+        changedArray.append(lastURLStr)
+        
+        return changedArray
+    }
+    
     private func initUI(){
         
         if !(self.imgURLs.isEmpty) {
@@ -66,53 +86,38 @@ class ZHDCircle: UIScrollView {
             //添加imgviews
             var index = 0
             while index < self.imgURLs.count {
-                let imgView = UIImageView()
                 let url : URL = URL(string: self.imgURLs[index])!
-                imgView.sd_setImage(with: url)
-                imgView.contentMode = UIViewContentMode.scaleAspectFill
-                self.addSubview(imgView)
+                let title : String = self.titles[index]
                 
-                imgView.snp.makeConstraints({ (make) in
+                let circleCell = ZHDCircleCell(url, title)
+                
+                self.addSubview(circleCell)
+                
+                circleCell.snp.makeConstraints({ (make) in
                     make.top.equalTo(self.snp.top)
                     if lastImgView == nil {
                         make.left.equalTo(self.snp.left)
                     }else{
                         make.left.equalTo((lastImgView?.snp.right)!)
                     }
-                    lastImgView = imgView
+                    lastImgView = circleCell
                     
                     make.size.equalTo(self.snp.size)
                 })
 
-               self.imgViews.append(imgView)
+               self.imgViews.append(circleCell)
                 index += 1
             }
-        }
-    }
-    
-    
-    /// 生成布局好的imgView
-    ///
-    /// - parameter index: urls数组下表
-    ///
-    /// - returns: <#return value description#>
-    private func  getClipsImgView(_ index : Int) -> UIImageView{
-        let imgView = UIImageView()
-        self.addSubview(imgView)
-        imgView.contentMode = UIViewContentMode.scaleAspectFill
-        
-        imgView.sd_setImage(with:URL(string:self.imgURLs[index]))
-        imgView.snp.makeConstraints { (make) in
             
         }
         
-        lastImgView = imgView
-        return imgView
+        
     }
-    
+        
     
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }

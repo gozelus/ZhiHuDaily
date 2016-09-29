@@ -35,7 +35,7 @@ class ZHDHomeTopBannerModel{
     init(_ json : JSON) {
         
         self.id = json["id"].string
-        self.title = json["images"].string
+        self.title = json["title"].string
         self.type = json["type"].string
         self.imgeURL = json["image"].string
         
