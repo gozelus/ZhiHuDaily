@@ -30,7 +30,7 @@ class ZHDCircle: UIScrollView {
     //MARK: public
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.bounces = false
     }
 
     
