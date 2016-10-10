@@ -13,6 +13,9 @@
 		1B12AAF11D97D24F00561A06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B12AAEF1D97D24F00561A06 /* LaunchScreen.storyboard */; };
 		1B12AAFC1D97D24F00561A06 /* ZhiHuDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12AAFB1D97D24F00561A06 /* ZhiHuDailyTests.swift */; };
 		1B12AB071D97D24F00561A06 /* ZhiHuDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12AB061D97D24F00561A06 /* ZhiHuDailyUITests.swift */; };
+		1B4380F11D9908EE0034EB19 /* HTTPRequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4380F01D9908EE0034EB19 /* HTTPRequestBase.swift */; };
+		1B4380F31D991B720034EB19 /* ZHDHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4380F21D991B720034EB19 /* ZHDHomeViewModel.swift */; };
+		1B4380F61D991C8D0034EB19 /* HTTPRequestHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4380F51D991C8D0034EB19 /* HTTPRequestHome.swift */; };
 		1B8D87691D97D36A0090DC24 /* ZHDBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87681D97D36A0090DC24 /* ZHDBaseViewController.swift */; };
 		1B8D876B1D97D4350090DC24 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D876A1D97D4350090DC24 /* File.swift */; };
 		1B8D876D1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D876C1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift */; };
@@ -21,11 +24,11 @@
 		1B8D877E1D97EF6C0090DC24 /* ZHDHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D877B1D97EF6C0090DC24 /* ZHDHomeVC.swift */; };
 		1B8D87801D97EF930090DC24 /* ZHDHomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */; };
 		1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */; };
-		1B8D87851D97FC210090DC24 /* ZHDRequestBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D87841D97FC210090DC24 /* ZHDRequestBaseManager.swift */; };
-		5FBE27C21D98F00D00280F78 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */; };
+		1BECA02C1D9BBA1600B200D3 /* ZHDCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECA02B1D9BBA1600B200D3 /* ZHDCircle.swift */; };
+		1BECA02E1D9C041000B200D3 /* ZHDCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECA02D1D9C041000B200D3 /* ZHDCircleCell.swift */; };
+		1BECA02F1D9CDC2800B200D3 /* Pods_ZhiHuDaily.framework in Sources */ = {isa = PBXBuildFile; fileRef = BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */; };
 		5FBE27C51D99042D00280F78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; };
-		5FBE27C81D99059200280F78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; };
-		5FBE27C91D99059200280F78 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE27C41D99042D00280F78 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CDF74C866591A8E1039BA93 /* Pods_ZhiHuDaily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +55,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5FBE27C91D99059200280F78 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +74,9 @@
 		1B12AB021D97D24F00561A06 /* ZhiHuDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhiHuDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B12AB061D97D24F00561A06 /* ZhiHuDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiHuDailyUITests.swift; sourceTree = "<group>"; };
 		1B12AB081D97D24F00561A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B4380F01D9908EE0034EB19 /* HTTPRequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestBase.swift; sourceTree = "<group>"; };
+		1B4380F21D991B720034EB19 /* ZHDHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeViewModel.swift; sourceTree = "<group>"; };
+		1B4380F51D991C8D0034EB19 /* HTTPRequestHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestHome.swift; sourceTree = "<group>"; };
 		1B8D87681D97D36A0090DC24 /* ZHDBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDBaseViewController.swift; sourceTree = "<group>"; };
 		1B8D876A1D97D4350090DC24 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		1B8D876C1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDBaseLeftVC.swift; sourceTree = "<group>"; };
@@ -80,9 +85,12 @@
 		1B8D877B1D97EF6C0090DC24 /* ZHDHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeVC.swift; sourceTree = "<group>"; };
 		1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeBannerCell.swift; sourceTree = "<group>"; };
 		1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDHomeNewsCell.swift; sourceTree = "<group>"; };
-		1B8D87841D97FC210090DC24 /* ZHDRequestBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDRequestBaseManager.swift; sourceTree = "<group>"; };
-		5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		5FBE27C41D99042D00280F78 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		1BECA02B1D9BBA1600B200D3 /* ZHDCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDCircle.swift; sourceTree = "<group>"; };
+		1BECA02D1D9C041000B200D3 /* ZHDCircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDCircleCell.swift; sourceTree = "<group>"; };
+		26D0A54DDB2D5381AAE04E35 /* Pods-ZhiHuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.debug.xcconfig"; sourceTree = "<group>"; };
+		5FBE27C41D99042D00280F78 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = /Users/zhengli/Desktop/ZhiHuDaily/ZhiHuDaily/Alamofire.framework; sourceTree = "<absolute>"; };
+		69A2A72E6F622E112C4D4F24 /* Pods-ZhiHuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.release.xcconfig"; sourceTree = "<group>"; };
+		BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHuDaily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FBE27C51D99042D00280F78 /* Alamofire.framework in Frameworks */,
-				5FBE27C81D99059200280F78 /* Alamofire.framework in Frameworks */,
+				7CDF74C866591A8E1039BA93 /* Pods_ZhiHuDaily.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +127,8 @@
 				1B12AAFA1D97D24F00561A06 /* ZhiHuDailyTests */,
 				1B12AB051D97D24F00561A06 /* ZhiHuDailyUITests */,
 				1B12AAE41D97D24F00561A06 /* Products */,
+				DECB98CC3020B6A4AAF03F08 /* Pods */,
+				72203B682565224413C36C0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,9 +179,18 @@
 			path = ZhiHuDailyUITests;
 			sourceTree = "<group>";
 		};
+		1B4380F41D991C620034EB19 /* Requeset */ = {
+			isa = PBXGroup;
+			children = (
+				1B4380F51D991C8D0034EB19 /* HTTPRequestHome.swift */,
+			);
+			path = Requeset;
+			sourceTree = "<group>";
+		};
 		1B8D87771D97EF6C0090DC24 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1B4380F41D991C620034EB19 /* Requeset */,
 				1B8D87781D97EF6C0090DC24 /* Model */,
 				1B8D87791D97EF6C0090DC24 /* VC */,
 				1B8D877C1D97EF6C0090DC24 /* View */,
@@ -182,6 +201,7 @@
 		1B8D87781D97EF6C0090DC24 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B4380F21D991B720034EB19 /* ZHDHomeViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +220,8 @@
 			children = (
 				1B8D877F1D97EF930090DC24 /* ZHDHomeBannerCell.swift */,
 				1B8D87811D97F2EF0090DC24 /* ZHDHomeNewsCell.swift */,
+				1BECA02B1D9BBA1600B200D3 /* ZHDCircle.swift */,
+				1BECA02D1D9C041000B200D3 /* ZHDCircleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,7 +229,7 @@
 		1B8D87831D97FC020090DC24 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				1B8D87841D97FC210090DC24 /* ZHDRequestBaseManager.swift */,
+				1B4380F01D9908EE0034EB19 /* HTTPRequestBase.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -215,10 +237,25 @@
 		5FBE27C61D99043100280F78 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				5FBE27C41D99042D00280F78 /* Alamofire.framework */,
-				5FBE27C11D98F00D00280F78 /* SwiftyJSON.swift */,
 			);
 			name = Lib;
+			sourceTree = "<group>";
+		};
+		72203B682565224413C36C0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFA4C1BB051E5E423AC0CF8A /* Pods_ZhiHuDaily.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DECB98CC3020B6A4AAF03F08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26D0A54DDB2D5381AAE04E35 /* Pods-ZhiHuDaily.debug.xcconfig */,
+				69A2A72E6F622E112C4D4F24 /* Pods-ZhiHuDaily.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,10 +265,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B12AB0B1D97D24F00561A06 /* Build configuration list for PBXNativeTarget "ZhiHuDaily" */;
 			buildPhases = (
+				4BDB45B7CD89B03F3510C2BD /* [CP] Check Pods Manifest.lock */,
 				1B12AADF1D97D24F00561A06 /* Sources */,
 				1B12AAE01D97D24F00561A06 /* Frameworks */,
 				1B12AAE11D97D24F00561A06 /* Resources */,
 				5FBE27CA1D99059200280F78 /* Embed Frameworks */,
+				33BCD817F27DBFDD3A0AB1D5 /* [CP] Embed Pods Frameworks */,
+				FB7334441B0473620343B6D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -351,20 +391,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33BCD817F27DBFDD3A0AB1D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BDB45B7CD89B03F3510C2BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB7334441B0473620343B6D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B12AADF1D97D24F00561A06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BECA02F1D9CDC2800B200D3 /* Pods_ZhiHuDaily.framework in Sources */,
 				1B12AAE91D97D24F00561A06 /* ViewController.swift in Sources */,
+				1B4380F31D991B720034EB19 /* ZHDHomeViewModel.swift in Sources */,
+				1BECA02C1D9BBA1600B200D3 /* ZHDCircle.swift in Sources */,
 				1B8D876B1D97D4350090DC24 /* File.swift in Sources */,
-				1B8D87851D97FC210090DC24 /* ZHDRequestBaseManager.swift in Sources */,
-				5FBE27C21D98F00D00280F78 /* SwiftyJSON.swift in Sources */,
 				1B8D87821D97F2EF0090DC24 /* ZHDHomeNewsCell.swift in Sources */,
+				1BECA02E1D9C041000B200D3 /* ZHDCircleCell.swift in Sources */,
 				1B8D877E1D97EF6C0090DC24 /* ZHDHomeVC.swift in Sources */,
 				1B12AAE71D97D24F00561A06 /* AppDelegate.swift in Sources */,
 				1B8D87711D97E1BE0090DC24 /* UIViewExtension.swift in Sources */,
 				1B8D87691D97D36A0090DC24 /* ZHDBaseViewController.swift in Sources */,
+				1B4380F11D9908EE0034EB19 /* HTTPRequestBase.swift in Sources */,
+				1B4380F61D991C8D0034EB19 /* HTTPRequestHome.swift in Sources */,
 				1B8D87801D97EF930090DC24 /* ZHDHomeBannerCell.swift in Sources */,
 				1B8D877D1D97EF6C0090DC24 /* ZHDHomeNaviVC.swift in Sources */,
 				1B8D876D1D97D5BA0090DC24 /* ZHDBaseLeftVC.swift in Sources */,
@@ -509,6 +601,7 @@
 		};
 		1B12AB0C1D97D24F00561A06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26D0A54DDB2D5381AAE04E35 /* Pods-ZhiHuDaily.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U9EXFUUUT3;
@@ -517,7 +610,7 @@
 					"$(PROJECT_DIR)/ZhiHuDaily",
 				);
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ZhiHuDaily";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,6 +620,7 @@
 		};
 		1B12AB0D1D97D24F00561A06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69A2A72E6F622E112C4D4F24 /* Pods-ZhiHuDaily.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U9EXFUUUT3;
@@ -535,7 +629,7 @@
 					"$(PROJECT_DIR)/ZhiHuDaily",
 				);
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ZhiHuDaily";
 				PRODUCT_NAME = "$(TARGET_NAME)";

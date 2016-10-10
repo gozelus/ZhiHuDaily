@@ -61,4 +61,10 @@ class ZHDBaseViewController: UIViewController {
         self.rightChildVC.view.frame = CGRect(x: 0, y: 0, width: ZHDScreenWidth, height: ZHDScreenHeight)
         self.scrollView.isPagingEnabled = true
     }
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

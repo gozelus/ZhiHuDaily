@@ -22,29 +22,31 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var tableview = UITableView()
     private var naviTitleView = UIView()
+    private var topBannerCell = ZHDHomeBannerCell()
     
+    /// 顶部banner数据模型
+    private var topCellViewModels : [ZHDHomeTopBannerModel] = Array()
+    
+    /// 新闻cell数据模型
+    private var newCellViewModels : [ZHDHomeNewsCellModel] = Array()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupTableview()
-        ZHDRequestManagerBase.request("http://news-at.zhihu.com/api/4/news/latest", ["123" : "123"], { (data) in
-            
-        }) { (error) in
-            
-        }
         
-        // Alamofire Test
-        Alamofire.request("https://httpbin.org/get").responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+        HTTPRequestHome.request(success: { (json) in
+            let  homeModel = ZHDHomeModel(json)
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
+            self.topCellViewModels = homeModel.top_stroies
+            self.newCellViewModels = homeModel.stroies
+        
+            
+            self.tableview.reloadData()
+            
+            }) { (error) in
+                print(error)
         }
     }
     
@@ -55,8 +57,11 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     // MARK: - Private
+    
+    // MARK: UI
     private func setupTableview(){
         self.tableview.frame = CGRect(origin: CGPoint.zero, size: ZHDScreenRect.size)
+        self.tableview.separatorStyle = .none
         self.tableview.delegate = self
         self.tableview.dataSource = self
         self.tableview.register(ZHDHomeBannerCell.classForCoder(), forCellReuseIdentifier: kBannerCellReuserID)
@@ -76,7 +81,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let navi = self.navigationController?.navigationBar.subviews.first {
             navi.alpha = 0
         }
-        self.navigationController?.navigationBar.barTintColor = .red
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     }
     
     private func setupTitleView(){
@@ -92,8 +97,6 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         self.naviTitleView.zl_setSize(label.zl_size())
         self.naviTitleView.addSubview(label)
-        
-        
     }
     
     
@@ -104,14 +107,24 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if let cell = self.tableview.dequeueReusableCell(withIdentifier: kBannerCellReuserID) {
+            if let cell : ZHDHomeBannerCell = self.tableview.dequeueReusableCell(withIdentifier: kBannerCellReuserID) as? ZHDHomeBannerCell{
+                
+                self.topBannerCell = cell
+                
+                if !self.topCellViewModels.isEmpty {
+                    cell.updateWithBannerModel(self.topCellViewModels)
+                }
                 return cell
             }else {
                 return UITableViewCell()
             }
         }
         
-        if let cell = self.tableview.dequeueReusableCell(withIdentifier: kNewsCellReuserID) {
+        if let cell : ZHDHomeNewsCell = self.tableview.dequeueReusableCell(withIdentifier: kNewsCellReuserID) as! ZHDHomeNewsCell?
+        {
+            if !self.newCellViewModels.isEmpty {
+                cell.updateWithModel(model: self.newCellViewModels[indexPath.row])
+            }
             return cell
         }else {
             return UITableViewCell()
@@ -122,7 +135,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         }else {
-            return 20
+            return self.newCellViewModels.count
         }
     }
     
@@ -130,7 +143,7 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             return 100
         }
-        return 50
+        return 80
     }
     
     
@@ -138,7 +151,9 @@ class ZHDHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y + 64.0
-        let scale = offset / 100.0
+        let scale = offset / 100.0   //1--->0
+    
+        self.topBannerCell.updateDepthFieldView(1-scale)
         
         if let navi = self.navigationController?.navigationBar.subviews.first {
             navi.alpha = scale
