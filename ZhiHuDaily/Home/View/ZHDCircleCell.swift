@@ -10,20 +10,24 @@
 import UIKit
 import SnapKit
 import SDWebImage
+
 fileprivate let kTitileLabelFontSize  = 18.0
 fileprivate let kTitleLabelPadding = 13.0
 
 class ZHDCircleCell: UIImageView {
 
-    private var imgUrl : URL?
-    private var title : String?
-    private var titleLabel : UILabel = UILabel()
+    private var imgUrl: URL?
+    private var title: String?
+    private var titleLabel = UILabel()
     
     
-    //MARK: public
+    //MARK: - Public
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     convenience init(_ imgUrl : URL, _ title : String){
@@ -38,18 +42,17 @@ class ZHDCircleCell: UIImageView {
     }
     
     
-    //MARK:- private
-    
+    // MARK:- Private
     private func setupSubview(){
+        if let url = self.imgUrl {
+            self.sd_setImage(with: url)
+        }
         
-        self.sd_setImage(with: self.imgUrl!)
-        
-        let coverView : UIView = UIView()
+        let coverView = UIView()
         coverView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         coverView.alpha = 0.2
         self.addSubview(coverView)
         coverView.snp.makeConstraints { (make) in
-            
             make.size.equalTo(self.snp.size)
             make.center.equalTo(self.snp.center)
         }
@@ -61,21 +64,10 @@ class ZHDCircleCell: UIImageView {
         self.addSubview(self.titleLabel)
         
         self.titleLabel.snp.makeConstraints { (make) in
-            
             make.left.equalTo(self).offset(kTitleLabelPadding)
             make.right.equalTo(self.snp.right).offset(-kTitleLabelPadding)
             make.bottom.equalTo(self.snp.bottom).offset(-1.5 * kTitleLabelPadding)
         }
-
-        
-    }
-    
-    
-    
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
 }

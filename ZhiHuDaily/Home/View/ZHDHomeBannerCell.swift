@@ -71,7 +71,7 @@ class ZHDHomeBannerCell: UITableViewCell, UIScrollViewDelegate {
         
     }
     
-    private func addTimer(){
+    private func addTimer() {
         
         self.timer = Timer(timeInterval: 3, target: self, selector: #selector(timerNextPic), userInfo: nil, repeats: true)
         let runloop = RunLoop.current
@@ -79,7 +79,7 @@ class ZHDHomeBannerCell: UITableViewCell, UIScrollViewDelegate {
         runloop.add(t, forMode: .commonModes)
     }
     
-    private func removeTimer(){
+    private func removeTimer() {
         self.timer?.invalidate()
         self.timer = nil
     }
@@ -100,7 +100,6 @@ class ZHDHomeBannerCell: UITableViewCell, UIScrollViewDelegate {
             
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: {
                 self.circleView.setContentOffset(.zero, animated: false) //快速切换到第二张
-
             })
         }else{
             self.circleView.setContentOffset(nextPageOffset, animated: true)
@@ -115,22 +114,19 @@ class ZHDHomeBannerCell: UITableViewCell, UIScrollViewDelegate {
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         
-        //结束拖拽时 设置定时器
+        // 结束拖拽时 设置定时器
         addTimer()
         
         let offset = scrollView.contentOffset.x
         
         let theLastOffset = ZHDScreenWidth * CGFloat(self.bannerModels.count + 1)
-        let theFirstOffset = CGFloat(0)
-        
-        let theSecondImgPoint = CGPoint(x: ZHDScreenWidth, y: 0)
-        let thePreLastImgPoint = CGPoint(x: CGFloat(self.bannerModels.count) * ZHDScreenWidth, y: 0)
+        let theFirstOffset: CGFloat = 0
         
         if offset >= theLastOffset {
+            let theSecondImgPoint = CGPoint(x: ZHDScreenWidth, y: 0)
             scrollView.setContentOffset(theSecondImgPoint, animated: false)//最后一张 跳转到第二张
-        }
-        
-        if offset <= theFirstOffset{
+        }else if offset <= theFirstOffset {
+            let thePreLastImgPoint = CGPoint(x: CGFloat(self.bannerModels.count) * ZHDScreenWidth, y: 0)
             scrollView.setContentOffset(thePreLastImgPoint, animated: false)//第一张 跳转到倒数第二张
         }
         

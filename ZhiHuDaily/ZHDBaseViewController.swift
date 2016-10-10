@@ -35,17 +35,12 @@ class ZHDBaseViewController: UIViewController {
         
         //setup scrollview 
         self.setupSubviews()
-        
-        
-
     }
     
     
     func setupChildVC(){
         self.addChildViewController(self.leftChildVC)
         self.addChildViewController(self.rightChildVC)
-        
-        
     }
 
 

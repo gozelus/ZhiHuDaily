@@ -41,7 +41,6 @@ class ZHDCircle: UIScrollView {
         var urls = [String]()
         var titles = [String]()
     
-        
         for model in models {
             if let url = model.imageURL {
                 urls.append(url)
@@ -81,7 +80,7 @@ class ZHDCircle: UIScrollView {
         
         if !(self.imgURLs.isEmpty) {
             
-            let imgCount : CGFloat = CGFloat(self.imgURLs.count)
+            let imgCount = CGFloat(self.imgURLs.count)
             self.contentSize = CGSize(width: kImgViewWidth * imgCount, height: 100)
             self.showsVerticalScrollIndicator = false
             self.showsHorizontalScrollIndicator = false

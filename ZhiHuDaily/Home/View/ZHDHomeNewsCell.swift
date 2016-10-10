@@ -17,8 +17,8 @@ let kPadding : CGFloat  =  20
 class ZHDHomeNewsCell: UITableViewCell {
 
     
-    private var titleLabel : UILabel = UILabel()
-    private var imgView : UIImageView = UIImageView()
+    private var titleLabel = UILabel()
+    private var imgView = UIImageView()
     private var constraint : Constraint?
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -26,9 +26,8 @@ class ZHDHomeNewsCell: UITableViewCell {
         self.selectionStyle = .none
         self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
-        //SETUP UI
+        // Setup UI
         setupSubviews()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,8 +35,8 @@ class ZHDHomeNewsCell: UITableViewCell {
     }
     
     
-    //MARK: - Private
-    private func setupSubviews(){
+    // MARK: - Private
+    private func setupSubviews() {
         
         self.titleLabel.font = UIFont.systemFont(ofSize: kTitleLabelFontSize)
         self.titleLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -47,7 +46,6 @@ class ZHDHomeNewsCell: UITableViewCell {
                 
         //MARK : - 子view布局
         self.titleLabel.snp.remakeConstraints { (make) in
-            
             make.top.equalTo(self.snp.top).offset(kPadding)
             make.left.equalTo(self.snp.left).offset(kPadding)
             make.right.equalTo(self.snp.right).offset(-100)
@@ -65,24 +63,17 @@ class ZHDHomeNewsCell: UITableViewCell {
     
     
     
-    //MARK: - Public
+    // MARK: - Public
     
-    /// 根据model更新cell UI
-    ///
-    /// - parameter model: <#model description#>
-    public func updateWithModel(model : ZHDHomeNewsCellModel!){
+    // 根据model更新cell UI
+    public func updateWithModel(model: ZHDHomeNewsCellModel){
     
-        if let imgURL = model.imageURL as String!{
-            
-            if !imgURL.isEmpty {
-                
-                self.imgView.sd_setImage(with: URL(string: imgURL))
-            }
+        if let imgURL = model.imageURL, imgURL.isEmpty == false {
+            self.imgView.sd_setImage(with: URL(string: imgURL))
         }
         
-        if let title = model.title as String!{
+        if let title = model.title {
             self.titleLabel.text = title
-
             let label  = UILabel()
             label.text = title
             label.font = UIFont.systemFont(ofSize: kPadding)
