@@ -22,10 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = mainWindow
         self.window?.makeKeyAndVisible()
         
-        
-        
-        
-        
         return true
     }
 

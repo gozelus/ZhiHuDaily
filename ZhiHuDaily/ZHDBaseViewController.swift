@@ -35,17 +35,12 @@ class ZHDBaseViewController: UIViewController {
         
         //setup scrollview 
         self.setupSubviews()
-        
-        
-
     }
     
     
     func setupChildVC(){
         self.addChildViewController(self.leftChildVC)
         self.addChildViewController(self.rightChildVC)
-        
-        
     }
 
 
@@ -60,5 +55,11 @@ class ZHDBaseViewController: UIViewController {
         self.leftChildVC.view.frame = CGRect(x:  -ZHDScreenWidth, y: 0, width: ZHDScreenWidth, height: ZHDScreenHeight)
         self.rightChildVC.view.frame = CGRect(x: 0, y: 0, width: ZHDScreenWidth, height: ZHDScreenHeight)
         self.scrollView.isPagingEnabled = true
+    }
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

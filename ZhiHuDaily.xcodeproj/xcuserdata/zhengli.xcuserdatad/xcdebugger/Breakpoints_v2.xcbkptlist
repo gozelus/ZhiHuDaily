@@ -2,4 +2,52 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZhiHuDaily/Home/Model/ZHDHomeViewModel.swift"
+            timestampString = "496577538.491663"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZhiHuDaily.ZHDHomeNewsCellModel.__deallocating_deinit"
+                  moduleName = "ZhiHuDaily"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengli/Desktop/ZhiHuDaily/ZhiHuDaily/Home/Model/ZHDHomeViewModel.swift"
+                  timestampString = "496820521.141047"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZhiHuDaily.ZHDHomeNewsCellModel.deinit"
+                  moduleName = "ZhiHuDaily"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengli/Desktop/ZhiHuDaily/ZhiHuDaily/Home/Model/ZHDHomeViewModel.swift"
+                  timestampString = "496820521.142685"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

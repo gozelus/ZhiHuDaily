@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-let ZHDScreenRect : CGRect = UIScreen.main.bounds
-let ZHDScreenWidth : CGFloat = UIScreen.main.bounds.width
-let ZHDScreenHeight : CGFloat = UIScreen.main.bounds.height
+let ZHDScreenRect = UIScreen.main.bounds
+let ZHDScreenWidth = UIScreen.main.bounds.width
+let ZHDScreenHeight = UIScreen.main.bounds.height
 
-let kBaseURLString : String = "http://news-at.zhihu.com/api/4"
+let kBaseURLString = "http://news-at.zhihu.com/api/4"
